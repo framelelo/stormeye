@@ -22,28 +22,7 @@ function showHomePage()
                 J'ai des choses à dire
             </button>
             <!-- Modal -->
-            <div class="modal " id="publishModal" tabindex="-1">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Créer une publication</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                            <form method="post">
-                                <!-- Content input -->
-                                <div class="form-outline mb-3">
-                                    <textarea name="publishContent" class="form-control-plaintext border-secondary border" id="" cols="30" rows="2"></textarea>
-                                </div>
-                                <!-- Submit button -->
-                                <button type="submit" class="btn btn-primary btn-block customise-btn mb-4 w-100">
-                                    Je m'exprime
-                                </button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
+           <?php require_once 'views/components/publishModal.php' ?>
         </div>
     </section>
     <section class="sec-posts">
