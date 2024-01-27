@@ -1,0 +1,202 @@
+:root {
+  --primary-color: #000035;
+  --secondary-color: #000;
+  --tertiary-color: #000;
+
+  --light-color: #fff;
+  --grey-color: #464646;
+  --light-grey-color: #efefef;
+
+  --primary-font: "Inter", sans-serif;
+  --secondary-font: "Oswald", sans-serif;
+}
+
+/** Custom Heading **/
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--secondary-font);
+  text-transform: uppercase;
+}
+
+h1.heading {
+  font-size: 85px;
+  color: var(--light-color);
+  text-shadow: 1px 3px 4px var(--primary-color);
+}
+
+h2 {
+  color: var(--primary-color) !important;
+}
+
+h2.headline {
+  font-size: 50px;
+  text-shadow: 1px 1px 1px var(--grey-color);
+  opacity: 0.8;
+}
+
+h4.card-title {
+  font-size: 17px;
+  color: var(--primary-color);
+}
+
+/** Custom text, button & link **/
+.text-c-light {
+  color: var(--light-color);
+  text-shadow: 1px 1px 1px var(--grey-color);
+}
+
+.customise-btn {
+  background-color: var(--primary-color) !important;
+  color: var(--light-color);
+  text-transform: uppercase;
+  padding: 12px 15px !important;
+  margin: 15px auto !important;
+  border: none !important;
+  &:hover,
+  &:focus {
+    background-color: var(--secondary-color) !important;
+  }
+}
+
+.customise-link {
+  color: var(--primary-color) !important;
+  &:hover,
+  &:active,
+  &:focus {
+    color: var(--light-color) !important;
+  }
+}
+
+/** Custom input **/
+.form-control-plaintext {
+  background-color: transparent !important;
+}
+
+.form-control-plaintext::placeholder {
+  color: var(--grey-color);
+  opacity: 0.7;
+}
+
+.form-control-plaintext:-ms-input-placeholder {
+  color: var(--grey-color);
+  opacity: 0.7;
+}
+
+.form-control-plaintext::-ms-input-placeholder {
+  color: var(--grey-color);
+  opacity: 0.7;
+}
+
+input[type="file"] {
+  display: none;
+}
+
+.title-image {
+  padding: 20px;
+  cursor: pointer;
+  width: 120px;
+  height: 120px;
+  margin: 10px 0px;
+  text-align: center;
+  font: 16px var(--secondary-font);
+  color: #fff;
+  &:hover {
+    background-color: var(--primary_color);
+  }
+  > i {
+    font-size: 50px;
+    line-height: 80px;
+  }
+}
+
+/** Background - Authentication **/
+.bg-container {
+  background: url("https://zupimages.net/up/24/04/l876.jpeg") no-repeat center
+    center;
+  background-size: cover;
+  min-height: 100vh;
+  width: 100%;
+}
+
+.bg-glass {
+  background-color: hsla(0, 0%, 100%, 0.7) !important;
+}
+
+/** HEADER - NAVBAR **/
+header {
+  .button-profile {
+    position: relative;
+    appearance: none;
+    border: none;
+    background-color: transparent;
+    img {
+      width: 75px;
+      height: 75px;
+      border-radius: 100%;
+    }
+
+    .arrow-profile {
+      position: absolute;
+      bottom: 3px;
+      right: 20px;
+      background-color: var(--light-color);
+      border: 1px solid;
+      border-radius: 100%;
+      width: 15px;
+      height: 15px;
+      line-height: 12px;
+      text-align: center;
+
+      i {
+        font-size: 12px;
+      }
+    }
+  }
+
+  .logo-img {
+    width: 90px;
+    height: 90px;
+  }
+
+  .navbar-collapse {
+    background-color: var(--grey-color);
+
+    .dropdown-item {
+      color: var(--light-color);
+      font-family: var(--primary-font);
+      font-size: 17px;
+      opacity: 0.7;
+      &:hover {
+        opacity: 1;
+      }
+    }
+    @media (min-width: 768px) {
+      position: absolute;
+      top: 90%;
+      right: 10px;
+      z-index: 999;
+      text-align: left;
+    }
+
+    @media (max-width: 767px) {
+      text-align: center;
+    }
+  }
+}
+
+/** NO PAGE **/
+
+.nopage-background {
+  height: 100vh;
+  min-width: 100%;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
