@@ -2,9 +2,9 @@
 Header will be not be displayed for some specific pages -->
 <?php
      if (isset($_GET['p']) && $_GET['p'] !== 'login' && $_GET['p'] !== 'subscribe') { ?>
-        <header>
+        <header class="sticky-top">
             <nav class="navbar navbar-light bg-light">
-                <a class="navbar-brand p-3" href="#">
+                <a class="navbar-brand px-3 py-2" href="#">
                     <img class="logo-img" src="assets/img/Logo - The eye of Storm.png" alt="The Eye of Storm">
                 </a>
                 <button class="button-profile p-3" data-toggle="collapse" data-target="#profil-Dropdown">

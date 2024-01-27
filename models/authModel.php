@@ -5,10 +5,10 @@
     function registerUsers($picture, $username, $email, $password) {
     try {
         global $pdo;
-        $query = "INSERT INTO users (picture, username, email, password) VALUES (:p, :u, :e, :p)";
+        $query = "INSERT INTO users (picture, username, email, password) VALUES (:i, :u, :e, :p)";
         $statement = $pdo->prepare($query);
         $statement->execute([
-            'p' => $picture,
+            'i' => $picture,
             'u' => $username,
             'e' => $email,
             'p' => password_hash($password, PASSWORD_DEFAULT),
@@ -21,19 +21,28 @@
 }
 
 function loginUsers($email, $password) {
+    global $pdo;
+
     try {
-        global $pdo;
-        $query = "SELECT * FROM users WHERE email = :e";
-        $statement = $pdo->prepare($query);
-        $statement->execute(['e' => $email]);
-        $user = $statement->fetch();
-        if ($user && password_verify($password, $user['password'])) {
-            return $user;
-        } else {
+        $query = $pdo->prepare("SELECT * FROM users WHERE email = :e");
+
+        $query->execute([
+            "e" => $email
+        ]);
+        $user = $query->fetch();
+        if (!$user) {
             return false;
         }
-    } catch (PDOException $e) {
-        echo 'Error:'. $e->getMessage();
+
+        if (!password_verify($password, $user["password"])) {
+            return false;
+        }
+
+        $_SESSION["user"] = $user;
+
+        return true;
+    } catch (PDOEXCEPTION $e) {
+        echo $e->getMessage();
         return false;
     }
 }

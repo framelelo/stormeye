@@ -2,10 +2,11 @@
 
 
 session_start();
+
 global $base_url, $isConnected, $p;
 $base_url = "http://localhost/stormeye/";
 
-$isConnected = isset($_SESSION["users"]);
+$isConnected = isset($_SESSION["user"]);
 
 $p = isset($_GET['p']);
 

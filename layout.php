@@ -28,7 +28,7 @@
     <!-- Header -->
     <?php require_once "views/components/header.php"; ?>
 
-    <main>
+    <main class="bg-dark">
         <?php echo $content; ?>
     </main>
 

@@ -15,6 +15,12 @@ body {
   transition: all 0.5s linear;
 }
 
+/** Custom size for Sections **/
+.narrow-width {
+  max-width: 650px;
+  margin: 0 auto;
+}
+
 /** Custom Heading **/
 h1,
 h2,
@@ -40,11 +46,6 @@ h2.headline {
   font-size: 50px;
   text-shadow: 1px 1px 1px var(--grey-color);
   opacity: 0.8;
-}
-
-h4.card-title {
-  font-size: 17px;
-  color: var(--primary-color);
 }
 
 /** Custom text, button & link **/
@@ -78,6 +79,10 @@ h4.card-title {
   }
 }
 
+.custom-double-border {
+  border: 4px double rgba(128, 128, 128, 0.5);
+}
+
 /** Custom input **/
 .form-control-plaintext {
   background-color: transparent !important;
@@ -98,14 +103,9 @@ h4.card-title {
   opacity: 0.7;
 }
 
+/** Custom input upload image **/
 input[type="file"] {
   display: none;
-}
-
-/** Custom Image upload **/
-.custom-file-upload {
-  color: var(--light-color);
-  cursor: pointer;
 }
 
 .image-label {
@@ -120,12 +120,49 @@ input[type="file"] {
   &:hover {
     background-color: var(--primary_color);
   }
-  > i {
+  i {
     font-size: 50px;
     line-height: 80px;
   }
 }
 
+/** Custom cards **/
+
+.card {
+  .profile-section {
+    /** Custom profile image **/
+    .profile-image-container {
+      width: 45px;
+      height: 45px;
+      border-radius: 100%;
+      margin-right: 5px;
+      overflow: hidden;
+      .profile-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 100%;
+        margin-right: 5px;
+      }
+    }
+    span {
+      font-size: 13px;
+      font-family: var(--primary-font);
+    }
+  }
+  .liked {
+    color: red;
+  }
+  .count {
+    font-size: 13px;
+  }
+}
+
+.sec-posts {
+  i {
+    font-size: 25px;
+  }
+}
 /** Background - Authentication **/
 .bg-container {
   background: url("https://zupimages.net/up/24/04/l876.jpeg") no-repeat center
@@ -147,14 +184,14 @@ header {
     border: none;
     background-color: transparent;
     img {
-      width: 75px;
-      height: 75px;
+      width: 50px;
+      height: 50px;
       border-radius: 100%;
     }
 
     .arrow-profile {
       position: absolute;
-      bottom: 3px;
+      bottom: 0px;
       right: 20px;
       background-color: var(--light-color);
       border: 1px solid;
@@ -171,8 +208,8 @@ header {
   }
 
   .logo-img {
-    width: 90px;
-    height: 90px;
+    width: 75px;
+    height: 75px;
   }
 
   .navbar-collapse {
@@ -209,13 +246,13 @@ header {
 /** Button - Publish **/
 .btn-publish {
   display: block;
-  background-color: var(--light-grey-color);
+  background-color: var(--light-color);
   color: var(--secondary-color);
   text-transform: uppercase;
-  padding: 15px;
+  padding: 10px;
   margin: 15px auto;
-  border: 4px double rgba(128, 128, 128, 0.5);
-  width: 90%;
+  width: 100%;
+  border-radius: 6px;
   font-family: var(--secondary-font);
   font-size: 25px;
   &:hover,
