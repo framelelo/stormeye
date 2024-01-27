@@ -24,44 +24,17 @@
 </head>
 
 <body>
-<!-- 
-Header will be not be displayed for some specific pages -->
-    <?php
-    if (isset ($_GET['p']) && $_GET['p'] !== 'login' && $_GET['p'] !== 'subscribe') { ?>
 
-        <header>
-            <nav class="navbar navbar-light bg-light">
-                <a class="navbar-brand p-3" href="#">
-                    <img class="logo-img" src="assets/img/Logo - The eye of Storm.png" alt="The Eye of Storm">
-                </a>
-                <button class="button-profile p-3" data-toggle="collapse" data-target="#profil-Dropdown">
-                    <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="The Eye of Storm">
-                    <p class="ml-2 arrow-profile">
-                        <i class="bi bi-caret-down-fill"></i>
-                    </p>
-                </button>
-                <div class="collapse navbar-collapse p-4" id="profil-Dropdown">
-                    <ul class="navbar-nav">
-                        <li>
-                            <a class="dropdown-item py-2" href="#">Mon profil</a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item py-2" href="#">Me déconnecter</a>
-                        </li>
+    <!-- Header -->
+    <?php require_once "views/components/header.php"; ?>
 
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-        </header>
-    <?php }; ?>
     <main>
         <?php echo $content; ?>
     </main>
 
-    <footer>
-
-    </footer>
+    <!-- Footer -->
+    <?php require_once "views/components/footer.php"; ?>
+    
     <!-- BOOSTRAP -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js" integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>

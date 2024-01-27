@@ -1,8 +1,8 @@
 <?php
-
-ob_start();
 function showSubscription()
 {
+
+  ob_start();
 ?>
   <!-- Section: Design Block -->
   <section class="bg-container overflow-hidden">
@@ -61,17 +61,18 @@ function showSubscription()
         </div>
         <div class="col-lg-6 mb-5 mb-lg-0 d-none d-lg-block" style="z-index: 10">
           <h1 class="my-3 display-5 fw-bold ls-tight heading">
-          The Eye Of  Storm <br>
-           
+            The Eye Of Storm <br>
+
           </h1>
           <h2 class="headline text-light">Bravons la tempête ENSEMBLE</h2>
-         
+
         </div>
       </div>
     </div>
   </section>
-  <!-- Section: Design Block -->
 
 <?php
+
+  $content = ob_get_clean();
+  require_once 'layout.php';
 };
-$content = ob_get_clean();

@@ -12,8 +12,9 @@
 }
 
 body {
-  transition: all 0.5s ease;
+  transition: all 0.5s linear;
 }
+
 /** Custom Heading **/
 h1,
 h2,
@@ -47,6 +48,9 @@ h4.card-title {
 }
 
 /** Custom text, button & link **/
+.bg-c-primary  {
+  background-color: var(--grey-color);
+}
 .text-c-light {
   color: var(--light-color);
   text-shadow: 1px 1px 1px var(--grey-color);

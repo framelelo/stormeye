@@ -1,11 +1,20 @@
 <?php
 
-ob_start();
+function showHomePage()
+{
+    ob_start();
+?>
+    <div class="container">
+        <div class="row justify-content-evenly align-items-center">
+            <p>
+                Le cyclone Belal a frappé violemment notre île, provoquant des inondations massives et des vents destructeurs.
 
-function showHomePage(){?>
-    <div class="row justify-content-evenly align-items-center">
-        Le cyclone Belal a frappé violemment la région côtière, provoquant des inondations massives et des vents destructeurs. Les autorités ont lancé des opérations de secours pour évacuer les habitants et fournir une assistance d'urgence. Les dégâts matériels sont considérables, et les efforts de reconstruction sont en cours.
+            </p>
+            <p> Les autorités ont lancé des opérations de secours pour évacuer les habitants et fournir une assistance d'urgence. Les dégâts matériels sont considérables, et les efforts de reconstruction sont en cours.
+            </p>
+        </div>
     </div>
+
     <section class="sec-publish">
         <div class="container">
             <!-- Button trigger modal -->
@@ -74,5 +83,6 @@ function showHomePage(){?>
         </div>
     </section>
 <?php
-};
-$content = ob_get_clean();
+    $content = ob_get_clean();
+    require "layout.php";
+}
