@@ -11,6 +11,9 @@
   --secondary-font: "Oswald", sans-serif;
 }
 
+body {
+  transition: all 0.5s ease;
+}
 /** Custom Heading **/
 h1,
 h2,
@@ -187,16 +190,52 @@ header {
     }
   }
 }
+/** Button - Publish **/
+.btn-publish {
+  display: block;
+  background-color: var(--light-grey-color);
+  color: var(--secondary-color);
+  text-transform: uppercase;
+  padding: 15px;
+  margin: 15px auto;
+  border: 4px double rgba(128, 128, 128, 0.5);
+  width: 90%;
+  font-family: var(--secondary-font);
+  font-size: 25px;
+  &:hover,
+  &:focus {
+    background-color: var(--grey-color);
+    color: var(--light-color);
+  }
+
+}
 
 /** NO PAGE **/
 
 .nopage-background {
-  height: 100vh;
+  position: relative;
+  height: calc(100vh - 138px);
   min-width: 100%;
+  text-align: center;
 
   img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+  }
+  .text-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  
+    p {
+      line-height: 90px;
+      font-size: 80px;
+      text-transform: uppercase;
+      color: var(--light-color);
+      text-shadow: 1px 1px 1px var(--secondary-color);
+      font-family: var(--secondary-font)  ;
+    }
   }
 }

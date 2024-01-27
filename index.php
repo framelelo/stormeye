@@ -2,7 +2,7 @@
 
 require_once 'autoload.php';
 if (isset($_GET['p'])) {
-    
+    $p = $_GET['p'];
     switch ($p) {
         case 'home':
             showHomePage();
@@ -21,6 +21,3 @@ if (isset($_GET['p'])) {
             break;
     }
 }
-else{
-    showHomePage();
-} 
