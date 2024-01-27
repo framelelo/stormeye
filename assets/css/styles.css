@@ -102,7 +102,13 @@ input[type="file"] {
   display: none;
 }
 
-.title-image {
+/** Custom Image upload **/
+.custom-file-upload {
+  color: var(--light-color);
+  cursor: pointer;
+}
+
+.image-label {
   padding: 20px;
   cursor: pointer;
   width: 120px;
