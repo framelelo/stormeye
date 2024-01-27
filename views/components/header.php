@@ -15,6 +15,7 @@ Header will be not be displayed for some specific pages -->
                 </button>
                 <div class="collapse navbar-collapse p-4" id="profil-Dropdown">
                     <ul class="navbar-nav">
+                        <li class="text-light border-bottom mb-3 text-username">UsernameUsernameUsernameUsername</li>
                         <li>
                             <a class="dropdown-item py-2" href="#">Mon profil</a>
                         </li>
