@@ -9,7 +9,7 @@ function loginUser()
         if ($email && $password) {
             $loginUser = loginUsers($email, $password);
             if ($loginUser) {
-              echo 'connecté';
+              header('Location: ?p=home');
             }
             else {
                 echo 'Une erreur s\'est produite.'; 
@@ -35,7 +35,7 @@ function addUsers()
             if ($password == $confirmedPassword) {
                 $registerUsers = registerUsers($picture, $username, $email, $password);
                 if ($registerUsers) {
-                    header('Location: ?p=home');
+                    header('Location: ?p=login');
                 }
             } else {
                 echo 'Mots de passe ne correspondent pas';

@@ -18,6 +18,10 @@ if (isset($_GET["p"])) {
             loginUser();
             break;
 
+            case 'logout':
+                logOut();
+                break;
+
         default:
             showNoPage();
             break;

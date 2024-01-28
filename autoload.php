@@ -10,6 +10,8 @@ $isConnected = isset($_SESSION["user"]);
 
 $p = isset($_GET['p']);
 
+define('ROOT_PATH', realpath(dirname(__FILE__)));
+
 // Importer tous les controllers , models , templates
 
 foreach (glob("models/*.php") as $filename) {
