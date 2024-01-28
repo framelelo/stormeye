@@ -9,22 +9,21 @@ function createPosts()
         $image = time() . '_' . $_FILES['userPicture']['name'];
         $temp_folder = $_FILES['userPicture']['tmp_name'];
         $upload_folder = ROOT_PATH . "/uploads/" . $image;
+
         $maxFileSize = 2097152;
+        $fileSize = $_FILES['userPicture']['size'];
 
-        if (!empty($_FILES['userPicture']['name'])) {
-            $fileSize = $_FILES['userPicture']['size'];
-
+        if ($_FILES['userPicture']['name']) {
             if ($fileSize > $maxFileSize) {
                 echo '<div class="modal"><p>La taille de votre image est trop lourde.</p></div>';
             } else {
+                // Move uploaded file
                 move_uploaded_file($temp_folder, $upload_folder);
-                
             }
+        } else {
+            $image = '../assets/img/default_post_img.png';
         }
-        else {
-                $image = 'default_post_img.png'; 
-            }
-        
+
         $result = createPost($id_user, $image, $content);
         if ($result) {
             echo 'Publication créée';
@@ -34,7 +33,6 @@ function createPosts()
     }
 
     // showHomePage();
-
     $posts = getAllPosts();
     showHomePage($posts);
 }
@@ -58,6 +56,7 @@ function updatePosts()
 
 function logOut()
 {
+    
     session_destroy();
     header('Location: ?p=home');
 }
