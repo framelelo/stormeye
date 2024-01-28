@@ -8,12 +8,14 @@
             <div class="modal-body">
                 <form method="post" enctype="multipart/form-data">
                     <!-- Image input -->
-                    <div class="image-upload-btn text-center">
-                        <label class="image-label bg-dark w-100" for="image-upload">
+                    <div class="image-upload-btn">
+                        <div class="img-container mb-3" id="previewContainer">
+                            <img alt="The Eye of Storm" id="previewImage">
+                        </div>
+                        <label class="image-label bg-dark w-100" for="image-upload" id="image-label">
                             <i class="bi bi-image-fill"></i>
                         </label>
                         <input type="file" name="userPicture" id="image-upload" accept=".jpeg,.png,.jpg" onchange="previewFile()">
-                        <div class="img-preview"></div>
                     </div>
 
                     <!-- Content input -->

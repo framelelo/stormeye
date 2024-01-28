@@ -198,8 +198,8 @@ header {
       border-radius: 100%;
       width: 15px;
       height: 15px;
-      line-height: 12px;
       text-align: center;
+      line-height: 12px;
 
       i {
         font-size: 12px;
@@ -241,6 +241,21 @@ header {
     @media (max-width: 767px) {
       text-align: center;
     }
+  }
+}
+
+/** Preview will appeared after upload **/
+#previewContainer{
+  height: 250px;
+  width: auto;
+  display: none;
+  overflow: hidden;
+  text-align: center;
+
+  img {
+    height: 100%;
+    object-fit: contain;
+    border-radius: 5px;
   }
 }
 /** Button - Publish **/

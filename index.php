@@ -22,6 +22,9 @@ if (isset($_GET["p"])) {
                 logOut();
                 break;
 
+                case 'delete':
+                    deletePosts();
+                    break;
         default:
             showNoPage();
             break;

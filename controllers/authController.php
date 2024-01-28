@@ -1,4 +1,6 @@
 <?php
+
+// Login function and direction to homepage
 function loginUser()
 {
     if ($_POST) {
@@ -20,6 +22,8 @@ function loginUser()
     }
     showLogin();
 }
+
+// Register new accounts function 
 function addUsers()
 {
     if ($_POST) {
@@ -47,4 +51,9 @@ function addUsers()
     showSubscription();
 }
 
-
+// Logout function and direction to homepage
+function logOut()
+{
+    session_destroy();
+    header('Location: ?p=home');
+}
