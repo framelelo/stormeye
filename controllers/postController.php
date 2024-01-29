@@ -39,7 +39,6 @@ function createPosts()
     showHomePage($posts);
 }
 
-
 function updatePosts()
 {
     global $base_url;

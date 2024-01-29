@@ -45,14 +45,12 @@ function showHomePage($posts)
                                     <button class="btn dropdown" type="button" id="settingsDropdown" data-toggle="dropdown">
                                         <i class="bi bi-three-dots"></i>
                                     </button>
+                                
                                     <div class="dropdown-menu">
                                         <a class="dropdown-item py-2" href="<?php $base_url ?>?p=update&id=<?= $p['id'] ?>">Modifier</a>
-                                        <!-- <button type="button" class="btn-publish custom-double-border text-center" data-bs-toggle="modal" data-bs-target="#updateModal">
-                                           Modifier
-                                        </button> -->
                                         <form action="<?= $base_url ?>?p=delete&id=<?= $p['id'] ?> &image=<?= $p['image'] ?>" method="post">
-                                        <button type="submit" class="dropdown-item py-2">Supprimer</button>
-                                    </form>
+                                            <button type="submit" class="dropdown-item py-2">Supprimer</button>
+                                        </form>
                                     </div>
                                 </div>
                             <?php } ?>

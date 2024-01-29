@@ -20,6 +20,7 @@ foreach (glob("models/*.php") as $filename) {
 foreach (glob("views/*.php") as $filename) {
     require_once $filename;
 }
+
 foreach (glob("controllers/*.php") as $filename) {
     require_once $filename;
 }
