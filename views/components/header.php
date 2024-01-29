@@ -9,7 +9,7 @@ Header will be not be displayed for some specific pages -->
                     <img class="logo-img" src="assets/img/Logo - The eye of Storm.png" alt="The Eye of Storm">
                 </a>
                 <button class="button-profile p-3" data-toggle="collapse" data-target="#profil-Dropdown">
-                    <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="The Eye of Storm">
+                    <img src="<?php if(isset($_SESSION['user']['picture']) && $_SESSION['user']['picture']!=='') echo 'uploads/' . $_SESSION['user']['picture']; else echo 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png'; ?>" alt="The Eye of Storm">
                     <p class="ml-2 arrow-profile">
                         <i class="bi bi-caret-down-fill"></i>
                     </p>

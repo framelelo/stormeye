@@ -34,12 +34,13 @@ function addUsers()
         $password = $_POST['registerPassword'];
         $confirmedPassword = $_POST['confirmRegisterPassword'];
         
-        $picture = time() . '_' . $_FILES['userPicture']['name'];
+        $picture = $_FILES['userPicture']['name'];
         $temp_folder = $_FILES['userPicture']['tmp_name'];
         $upload_folder = ROOT_PATH . "/uploads/" . $picture;
 
         $maxFileSize = 2097152;
         $fileSize = $_FILES['userPicture']['size'];
+        var_dump($fileSize);
 
         // Check if a file was uploaded successfully
         if ($picture) {

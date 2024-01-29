@@ -35,7 +35,8 @@ function showHomePage($posts)
                         <div class="my-3 mx-2 profile-section d-flex align-items-center justify-content-between">
                             <div class="left-content d-flex align-items-center">
                                 <div class="custom-double-border profile-image-container">
-                                    <img src="/uploads/ . <?= getUserImage($p['id_user']) ?>" alt="Cyclone Belal" class="rounded-circle profile-image">
+                                    <img src="uploads/<?= getUserImage($p['id_user']) ?>" alt="Cyclone Belal" class="rounded-circle profile-image">
+
                                 </div>
                                 <span><?= getUsername($p['id_user']) ?></span>
                             </div>
@@ -49,7 +50,9 @@ function showHomePage($posts)
                                         <!-- <button type="button" class="btn-publish custom-double-border text-center" data-bs-toggle="modal" data-bs-target="#updateModal">
                                            Modifier
                                         </button> -->
-                                        <a class="dropdown-item py-2" href="<?php $base_url ?>?p=delete&id=<?= $p['id'] ?>">Supprimer</a>
+                                        <form action="<?= $base_url ?>?p=delete&id=<?= $p['id'] ?> &image=<?= $p['image'] ?>" method="post">
+                                        <button type="submit" class="dropdown-item py-2">Supprimer</button>
+                                    </form>
                                     </div>
                                 </div>
                             <?php } ?>
@@ -65,7 +68,6 @@ function showHomePage($posts)
                             <p class="card-text mt-3">
                                 <?= $p['content'] ?>
                             </p>
-                            <a href="#" class="btn btn-sm btn-primary customise-btn">... En savoir plus</a>
                         </div>
                     </div>
                 <?php } ?>

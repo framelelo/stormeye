@@ -5,7 +5,7 @@ function createPosts()
     if ($_POST) {
         $id_user = $_SESSION['user']['id'];
         $content = $_POST['postContent'];
-        $image = time() . '_' . $_FILES['userPicture']['name'];
+        $image =  $_FILES['userPicture']['name'];
         $temp_folder = $_FILES['userPicture']['tmp_name'];
         $upload_folder = ROOT_PATH . "/uploads/" . $image;
 
@@ -28,7 +28,7 @@ function createPosts()
 
         $result = createPost($id_user, $image, $content);
         if ($result) {
-            echo 'Publication créée';
+            echo header('Location: ?p=home');
         } else {
             echo 'Une erreur s\'est produite.';
         }
@@ -45,7 +45,7 @@ function updatePosts()
     global $base_url;
 
     if ($_POST) {
-            if (isset($_POST['postID'])) {
+        if (isset($_POST['postID'])) {
             $id = $_POST['postID'];
             $content = $_POST['postContent'];
 
@@ -79,14 +79,15 @@ function updatePosts()
 }
 
 
-
-
 // Delete post indivually
-function deletePosts()
+function deletePosts($id, $picture)
 {
-    if (isset($_GET['id'])) {
-        $id = $_GET['id'];
-        deletePost($id);
+    $picturePath = "uploads/" . $picture;
+
+    if (file_exists($picturePath)) {
+        unlink($picturePath);
     }
+    deletePost($id);
+
     header('Location: ?p=home');
 }

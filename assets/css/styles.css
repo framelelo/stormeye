@@ -13,8 +13,12 @@
 
 body {
   transition: all 0.5s linear;
+  overflow: hidden;
 }
 
+main {
+  overflow: auto;
+}
 /** Custom size for Sections **/
 .narrow-width {
   max-width: 650px;
@@ -215,12 +219,6 @@ header {
   .navbar-collapse {
     background-color: var(--grey-color);
 
-    .text-username {
-      max-width: 190px;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-
     .dropdown-item {
       color: var(--light-color);
       font-family: var(--primary-font);
@@ -236,6 +234,12 @@ header {
       right: 10px;
       z-index: 999;
       text-align: left;
+      .text-username {
+        max-width: 190px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: block;
+      }
     }
 
     @media (max-width: 767px) {

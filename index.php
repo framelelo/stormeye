@@ -23,7 +23,12 @@ if (isset($_GET["p"])) {
             break;
 
         case 'delete':
-            deletePosts();
+            if (isset($_GET['id']) && isset($_GET['image'])) {
+                $id = $_GET['id'];
+                $picture = $_GET['image'];
+
+                deletePosts($id, $picture);
+            }
             break;
 
         case 'update':
