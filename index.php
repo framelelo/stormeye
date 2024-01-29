@@ -32,7 +32,9 @@ if (isset($_GET["p"])) {
             break;
 
         case 'update':
-            updatePosts();
+            if (isset($_GET['id'])) {
+                $id = $_GET['id'];
+            updatePosts($id);}
             break;
         default:
             showNoPage();

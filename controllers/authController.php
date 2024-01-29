@@ -1,7 +1,14 @@
 <?php
 
+/* 
+ * Login controller
+ * 
+ * @return void
+
+*/
+
 // Login function and direction to homepage
-function loginUser()
+function loginUser():void
 {
     if ($_POST) {
         
@@ -14,49 +21,47 @@ function loginUser()
               header('Location: ?p=home');
             }
             else {
-                echo 'Une erreur s\'est produite.'; 
+                echo '<div class="modal-error"><p>Une erreur s\'est produite.</p></div>'; 
             }
         } else {
-            echo 'Merci de remplir tous les champs.';
+            echo '<div class="modal-error"><p>Merci de remplir tous les champs.</p></div>';
         }
     }
     showLogin();
 }
+/* 
+ * Register controller
+ * 
+ * @return void
 
+*/
 // Register new accounts function 
-function addUsers()
+function addUsers():void
 {
     if ($_POST) {
         
-        $picture = $_POST['userPicture'];
         $username = $_POST['registerUsername'];
         $email = $_POST['registerEmail'];
         $password = $_POST['registerPassword'];
         $confirmedPassword = $_POST['confirmRegisterPassword'];
         
-        $picture = $_FILES['userPicture']['name'];
+        $picture = isset($_FILES ['userPicture']['name']) ? $_FILES['userPicture']['name'] : '';
         $temp_folder = $_FILES['userPicture']['tmp_name'];
         $upload_folder = ROOT_PATH . "/uploads/" . $picture;
 
         $maxFileSize = 2097152;
         $fileSize = $_FILES['userPicture']['size'];
-        var_dump($fileSize);
 
         // Check if a file was uploaded successfully
         if ($picture) {
             // Check file size
             if ($fileSize > $maxFileSize) {
-                echo '<div class="modal"><p>La taille de votre image est trop lourde.</p></div>';
+                echo '<div class="modal-error"><p>La taille de votre image est trop lourde.</p></div>';
             } else {
                 // Move uploaded file
                 move_uploaded_file($temp_folder, $upload_folder);
             }
-        } else {
-            // No file uploaded, use default image
-            $picture = 'default_post_img.png';
-        }
-
-
+        } 
         if ($picture && $username && $email && $password && $confirmedPassword) {
             if ($password == $confirmedPassword) {
                 $registerUsers = registerUsers($picture, $username, $email, $password);
@@ -64,18 +69,24 @@ function addUsers()
                     header('Location: ?p=login');
                 }
             } else {
-                echo 'Mots de passe ne correspondent pas';
+                echo '<div class="modal-error"><p>Mots de passe ne correspondent pas.</p></div>';
             }
         } else {
-            echo 'Merci de remplir tous les champs.';
+            echo '<div class="modal-error"><p>Merci de remplir tous les champs.</p></div>';
         }
     }
     showSubscription();
 }
 
+/* 
+ * Logout
+ * 
+ * @return void
+
+*/
 // Logout function and direction to homepage
-function logOut()
+function logOut():void
 {
     session_destroy();
-    header('Location: ?p=home');
+    header('Location: ?p=login');
 }

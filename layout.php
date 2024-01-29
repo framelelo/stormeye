@@ -21,6 +21,7 @@
     <script defer src="assets/js/script.js"></script>
 
     <title>Eye of the Storm: Plateforme Collaborative pour le Suivi du Cyclone Belal</title>
+    <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico">
 </head>
 
 <body class="d-flex flex-column h-100">
@@ -28,7 +29,7 @@
     <!-- Header -->
     <?php require_once "views/components/header.php"; ?>
 
-    <main class="bg-dark h-100">
+    <main class="h-100">
         <?php echo $content; ?>
     </main>
 

@@ -1,20 +1,20 @@
 <?php
 
-function showForm() {
+function showForm($post) {
     ob_start();
     ?>
 
     <div class="narrow-width d-flex justify-content-center flex-column h-100">
-            <div class="bg-light my-4 p-5">
+            <div class="card bg-light my-4 p-5">
                     <h5 class="text-center">Modifier la publication</h5>
                 
                 <div class="content">
                     <form method="post" enctype="multipart/form-data" action="?p=update">
                         <!-- Image input -->
                         <div class="image-upload-btn">
-                            <div class="img-container mb-3" id="previewContainer">
-                                <img alt="The Eye of Storm" id="previewImage">
-                            </div>
+                        <div class="img-container img-preview" <?php if (!isset($post['image'])) ?> id="previewContainer">
+                            <img src="uploads/<?= isset($post['image']) ? $post['image'] : ''; ?>" alt="Animaux en adoption à l'ile Maurice" class="img-fluid">
+                        </div>
                             <label class="image-label bg-dark w-100" for="image-upload" id="image-label">
                                 <i class="bi bi-image-fill"></i>
                             </label>

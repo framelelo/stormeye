@@ -1,10 +1,23 @@
 <?php
 
+global $pdo;
+
+function registerUsers($picture, $username, $email, $password)
+{
+
     global $pdo;
-    
-    function registerUsers($picture, $username, $email, $password) {
     try {
-        global $pdo;
+        $checkQuery = $pdo->prepare("SELECT COUNT(*) FROM users WHERE email = :e");
+        $checkQuery->execute(["e" => $email]);
+        $emailExists = $checkQuery->fetchColumn();
+        if ($emailExists) {
+            return false;
+        }
+    } catch (PDOException $e) {
+        echo $e->getMessage();
+        return false;
+    }
+    try {
         $query = "INSERT INTO users (picture, username, email, password) VALUES (:i, :u, :e, :p)";
         $statement = $pdo->prepare($query);
         $statement->execute([
@@ -15,12 +28,13 @@
         ]);
         return true;
     } catch (PDOException $e) {
-        echo 'Error:'. $e->getMessage();
+        echo 'Error:' . $e->getMessage();
         return false;
     }
 }
 
-function loginUsers($email, $password) {
+function loginUsers($email, $password)
+{
     global $pdo;
 
     try {
@@ -49,12 +63,18 @@ function loginUsers($email, $password) {
 function getUsername($id)
 {
     global $pdo;
-    $query = $pdo->prepare("SELECT username FROM users WHERE id = :id");
-    $query->execute([
-        "id" => $id
-    ]);
-    $user = $query->fetch();
-    return $user["username"];
+    try {
+
+        $query = $pdo->prepare("SELECT username FROM users WHERE id = :id");
+        $query->execute([
+            "id" => $id
+        ]);
+        $user = $query->fetch();
+        return $user["username"];
+    } catch (PDOException $e) {
+        echo $e->getMessage();
+        return false;
+    }
 }
 function getUserImage($id)
 {

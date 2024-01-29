@@ -19,9 +19,6 @@ Header will be not be displayed for some specific pages -->
                         <?php if ($isConnected) { ?>
                             <li class="text-light border-bottom mb-3 text-username"><?php echo $_SESSION['user']['username'];?></li>
                             <li>
-                                <a class="dropdown-item py-2" href="<?php $base_url ?>?p=profile">Mon profil</a>
-                            </li>
-                            <li>
                                 <a class="dropdown-item py-2" href="<?php $base_url ?>?p=logout">Me déconnecter</a>
                             </li>
                         <?php } else { ?>

@@ -60,13 +60,13 @@ function deletePost($id) {
         return false;
     }
 }
-function updatePost($id, $image, $content) {
+function updatePost($id, $picture, $content) {
     try {
         global $pdo;
         $query = "UPDATE posts SET image = :i, content = :c WHERE id = :id";
         $statement = $pdo->prepare($query);
         $statement->execute([
-            'i' => $image,
+            'i' => $picture,
             'c' => $content,
             'id' => $id
         ]);

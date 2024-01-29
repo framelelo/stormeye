@@ -1,10 +1,15 @@
 <?php
-
-function createPosts()
+/*
+ * create post in db
+ * 
+ * @return void 
+*/
+function createPosts(): void
 {
     if ($_POST) {
         $id_user = $_SESSION['user']['id'];
         $content = $_POST['postContent'];
+
         $image =  $_FILES['userPicture']['name'];
         $temp_folder = $_FILES['userPicture']['tmp_name'];
         $upload_folder = ROOT_PATH . "/uploads/" . $image;
@@ -16,21 +21,21 @@ function createPosts()
         if ($image) {
             // Check file size
             if ($fileSize > $maxFileSize) {
-                echo '<div class="modal"><p>La taille de votre image est trop lourde.</p></div>';
+                echo '<div class="modal-error"><p>La taille de votre image est trop lourde.</p></div>';
             } else {
                 // Move uploaded file
                 move_uploaded_file($temp_folder, $upload_folder);
             }
         } else {
             // No file uploaded, use default image
-            $image = 'default_post_img.png';
+            $image = '';
         }
 
         $result = createPost($id_user, $image, $content);
         if ($result) {
             echo header('Location: ?p=home');
         } else {
-            echo 'Une erreur s\'est produite.';
+            echo '<div class="modal-error"><p>Une erreur s\'est produite.</p></div>';
         }
     }
 
@@ -38,48 +43,60 @@ function createPosts()
     $posts = getAllPosts();
     showHomePage($posts);
 }
+/*
+ * update post in db
+ * 
+ * @param int $id
+ * 
+ * @return void
 
-function updatePosts()
+*/
+function updatePosts(int $id): void
 {
     global $base_url;
-
+    
     if ($_POST) {
-        if (isset($_POST['postID'])) {
-            $id = $_POST['postID'];
+        if (isset($_GET['id'])) {
+            $id = $_GET['id'];
+
             $content = $_POST['postContent'];
 
-            // Handle file upload
-            if (!empty($_FILES['userPicture']['name'])) {
-                $image = time() . '_' . $_FILES['userPicture']['name'];
-                $temp_folder = $_FILES['userPicture']['tmp_name'];
-                $upload_folder = ROOT_PATH . "/uploads/" . $image;
+            $picture = null;
 
-                $move = move_uploaded_file($temp_folder, $upload_folder);
-                if (!$move) {
-                    echo "Merci de vérifier.";
-                    return;
+            if (!empty($_FILES['userPictures']['name'])) {
+                $picture = $_FILES['userPictures']['name'];
+
+                $temp_folder = $_FILES['userPictures']['tmp_name'];
+                $upload_folder = ROOT_PATH . "/uploads/" . $picture;
+
+                $result = move_uploaded_file($temp_folder, $upload_folder);
+                if (!$result) {
+                    echo '<div class="modal-error"><p>Merci de vérifier.</p></div>';
                 }
-            } else {
-                // If no new image is uploaded, keep the existing image name
-                $image = $_FILES['userPicture']['name'];
             }
+            $update = updatePost($id, $picture, $content);
 
-            $result = updatePost($id, $image, $content);
-
-            if ($result) {
-                header("location:$base_url?p=home");
-            } else {
-                echo '<p class="message px-2">Merci de vérifier !</p>';
-            }
+            if ($update) header("location:$base_url?p=home");
+            else echo '<div class="modal-error"><p>Merci de vérifier !</p></div>';
         }
     }
 
-    showForm();
+
+    $posts = getAllPosts();
+    showHomePage($posts);
 }
 
+/*
+ * update delete post in db
+ * 
+ * @param int $id, 
+ * @param string $picture
+ * 
+ * @return void
 
+*/
 // Delete post indivually
-function deletePosts($id, $picture)
+function deletePosts(int $id, string $picture): void
 {
     $picturePath = "uploads/" . $picture;
 

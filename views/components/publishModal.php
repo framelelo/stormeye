@@ -6,7 +6,7 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form method="post" enctype="multipart/form-data">
+                <form method="post" enctype="multipart/form-data" action="<?php echo $base_url; ?>?p=home">
                     <!-- Image input -->
                     <div class="image-upload-btn">
                         <div class="img-container mb-3" id="previewContainer">
