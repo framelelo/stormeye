@@ -2,7 +2,7 @@
 
 function showHomePage($posts)
 {
-    global $isConnected;
+    global $isConnected, $base_url;
     ob_start();
 ?>
     <!-- <div class="container">
@@ -23,8 +23,7 @@ function showHomePage($posts)
                     <button type="button" class="btn-publish custom-double-border text-center" data-bs-toggle="modal" data-bs-target="#publishModal">
                         Créer une publication...
                     </button>
-                    <!-- Modal -->
-                    <?php require_once 'views/components/publishModal.php' ?>
+                    <?php require_once 'views/components/publishModal.php'; ?>
                 </div>
             </section>
         <?php } ?>
@@ -33,30 +32,29 @@ function showHomePage($posts)
             <div class="container pb-5 auth-container">
                 <?php foreach ($posts as $p) { ?>
                     <div class="card my-5 p-0">
-                        <div class="my-3 mx-2 profile-section d-flex align-items-center">
-                            <div class="custom-double-border profile-image-container">
-                                <img src="https://source.unsplash.com/random/1920x1080" alt="Cyclone Belal" class="rounded-circle profile-image">
+                        <div class="my-3 mx-2 profile-section d-flex align-items-center justify-content-between">
+                            <div class="left-content d-flex align-items-center">
+                                <div class="custom-double-border profile-image-container">
+                                    <img src="/uploads/ . <?= getUserImage($p['id_user']) ?>" alt="Cyclone Belal" class="rounded-circle profile-image">
+                                </div>
+                                <span><?= getUsername($p['id_user']) ?></span>
                             </div>
-                            <span><?= getUsername($p['id_user']) ?></span>
                             <?php if ($isConnected && $p['id_user'] == $_SESSION['user']['id']) { ?>
-                                <button class="button-settings p-3" data-toggle="collapse" data-target="#settings-Dropdown">
-                                    <span class="text-end"><a href=""><i class="bi bi-three-dots"></i></a> </span>
-
-                                </button> 
-                                <?php } ?>
+                                <div class="dropdown">
+                                    <button class="btn dropdown" type="button" id="settingsDropdown" data-toggle="dropdown">
+                                        <i class="bi bi-three-dots"></i>
+                                    </button>
+                                    <div class="dropdown-menu">
+                                        <a class="dropdown-item py-2" href="<?php $base_url ?>?p=update&id=<?= $p['id'] ?>">Modifier</a>
+                                        <!-- <button type="button" class="btn-publish custom-double-border text-center" data-bs-toggle="modal" data-bs-target="#updateModal">
+                                           Modifier
+                                        </button> -->
+                                        <a class="dropdown-item py-2" href="<?php $base_url ?>?p=delete&id=<?= $p['id'] ?>">Supprimer</a>
+                                    </div>
+                                </div>
+                            <?php } ?>
                         </div>
 
-                        <div class=" p-4" id="settings-Dropdown">
-                            <ul class="navbar-nav">
-                                <li>
-                                    <a class="dropdown-item py-2" href="<?php $base_url ?>?p=update">Modifier</a>
-                                </li>
-                                <li>
-                                    <a class="dropdown-item py-2" href="<?php $base_url ?>?p=delete&id=<?= $p['id'] ?>">Supprimer</a>
-                                </li>
-                            </ul>
-
-                        </div>
                         <img src="uploads/<?= $p['image'] ?>" class="card-image-top" alt="...">
                         <div class="card-body">
                             <div class="py-2 d-flex align-items-center justify-content-end border-bottom border-secondary">

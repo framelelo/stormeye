@@ -3,7 +3,7 @@ Footer will be not be displayed for some specific pages -->
 <?php
      if (isset($_GET['p']) && $_GET['p'] !== 'login' && $_GET['p'] !== 'subscribe') { ?>
      
-  <footer class="bg-c-primary text-center text-white">
+  <footer class="bg-c-primary text-center mt-auto text-white">
       <!-- Grid container -->
       <div class="container p-4 pb-0">
           <!-- Section: Social media -->

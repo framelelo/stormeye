@@ -20,6 +20,19 @@ function createPost( $id_user, $image, $content) {
     }
 }
 
+function getPost($id) {
+    try {
+    global $pdo;
+    $query = "SELECT * FROM posts WHERE id = :i";
+    $statement = $pdo->prepare($query);
+    $statement->execute(['i' => $id]);
+    $post = $statement->fetch();
+    return $post;
+    } catch (PDOException $e) {
+        echo 'Erreur : '. $e->getMessage();
+        return false;
+    }
+}
 function getAllPosts() {
     try {
     global $pdo;
@@ -47,31 +60,20 @@ function deletePost($id) {
         return false;
     }
 }
-
 function updatePost($id, $image, $content) {
     try {
-    global $pdo;
-    $query = "UPDATE posts SET image = :i, content = :c WHERE id = :id";
-    $statement = $pdo->prepare($query);
-    $statement->execute([
-        'i' => $image,
-        'c' => $content,
-        'id' => $id
-    ]);
-    return true;
+        global $pdo;
+        $query = "UPDATE posts SET image = :i, content = :c WHERE id = :id";
+        $statement = $pdo->prepare($query);
+        $statement->execute([
+            'i' => $image,
+            'c' => $content,
+            'id' => $id
+        ]);
+        return true;
     } catch (PDOException $e) {
         echo 'Erreur : '. $e->getMessage();
         return false;
     }
 }
 
-function getUsername($id)
-{
-    global $pdo;
-    $query = $pdo->prepare("SELECT username FROM users WHERE id = :id");
-    $query->execute([
-        "id" => $id
-    ]);
-    $user = $query->fetch();
-    return $user["username"];
-}

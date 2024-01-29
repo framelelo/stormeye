@@ -4,12 +4,12 @@ require_once 'autoload.php';
 
 if (isset($_GET["p"])) {
     $p = $_GET["p"];
-    
+
     switch ($p) {
         case 'home':
             createPosts();
             break;
-            
+
         case 'subscribe':
             addUsers();
             break;
@@ -18,13 +18,17 @@ if (isset($_GET["p"])) {
             loginUser();
             break;
 
-            case 'logout':
-                logOut();
-                break;
+        case 'logout':
+            logOut();
+            break;
 
-                case 'delete':
-                    deletePosts();
-                    break;
+        case 'delete':
+            deletePosts();
+            break;
+
+        case 'update':
+            updatePosts();
+            break;
         default:
             showNoPage();
             break;

@@ -12,7 +12,7 @@ function showSubscription()
           <div class="card bg-glass">
             <div class="card-body px-4 py-5 px-md-5">
               <h2 class="mb-4 text-center">S'inscrire</h2>
-              <form method="post">
+              <form method="post" enctype="multipart/form-data">
 
                 <!-- Username input -->
                 <div class="image-upload-btn text-center">

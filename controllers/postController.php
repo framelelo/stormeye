@@ -13,7 +13,7 @@ function createPosts()
         $fileSize = $_FILES['userPicture']['size'];
 
         // Check if a file was uploaded successfully
-        if ($_FILES['userPicture']['error'] == UPLOAD_ERR_OK) {
+        if ($image) {
             // Check file size
             if ($fileSize > $maxFileSize) {
                 echo '<div class="modal"><p>La taille de votre image est trop lourde.</p></div>';
@@ -42,18 +42,44 @@ function createPosts()
 
 function updatePosts()
 {
+    global $base_url;
+
     if ($_POST) {
-        $id = $_POST['id'];
-        $content = $_POST['content'];
-        $image = $_POST['image'];
-        $result = updatePost($id, $image, $content);
-        if ($result) {
-            echo 'Publication mise à jour';
-        } else {
-            echo 'Une erreur s\'est produite.';
+            if (isset($_POST['postID'])) {
+            $id = $_POST['postID'];
+            $content = $_POST['postContent'];
+
+            // Handle file upload
+            if (!empty($_FILES['userPicture']['name'])) {
+                $image = time() . '_' . $_FILES['userPicture']['name'];
+                $temp_folder = $_FILES['userPicture']['tmp_name'];
+                $upload_folder = ROOT_PATH . "/uploads/" . $image;
+
+                $move = move_uploaded_file($temp_folder, $upload_folder);
+                if (!$move) {
+                    echo "Merci de vérifier.";
+                    return;
+                }
+            } else {
+                // If no new image is uploaded, keep the existing image name
+                $image = $_FILES['userPicture']['name'];
+            }
+
+            $result = updatePost($id, $image, $content);
+
+            if ($result) {
+                header("location:$base_url?p=home");
+            } else {
+                echo '<p class="message px-2">Merci de vérifier !</p>';
+            }
         }
     }
+
+    showForm();
 }
+
+
+
 
 // Delete post indivually
 function deletePosts()

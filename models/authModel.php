@@ -46,3 +46,23 @@ function loginUsers($email, $password) {
         return false;
     }
 }
+function getUsername($id)
+{
+    global $pdo;
+    $query = $pdo->prepare("SELECT username FROM users WHERE id = :id");
+    $query->execute([
+        "id" => $id
+    ]);
+    $user = $query->fetch();
+    return $user["username"];
+}
+function getUserImage($id)
+{
+    global $pdo;
+    $query = $pdo->prepare("SELECT picture FROM users WHERE id = :id");
+    $query->execute([
+        "id" => $id
+    ]);
+    $user = $query->fetch();
+    return $user["picture"];
+}

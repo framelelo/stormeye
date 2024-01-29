@@ -1,8 +1,9 @@
-<div class="modal" id="publishModal" tabindex="-1">
+
+<div class="modal" id="updateModal" tabindex="1">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title">J'ai des choses à dire...</h5>
+                <h5 class="modal-title">Modifier la publication</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
@@ -12,6 +13,7 @@
                         <div class="img-container mb-3" id="previewContainer">
                             <img alt="The Eye of Storm" id="previewImage">
                         </div>
+                        
                         <label class="image-label bg-dark w-100" for="image-upload" id="image-label">
                             <i class="bi bi-image-fill"></i>
                         </label>

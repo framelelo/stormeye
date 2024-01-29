@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" class="h-100">
 
 <head>
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <meta charset="UTF-8">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="assets/css/styles.css">
 
@@ -23,12 +23,12 @@
     <title>Eye of the Storm: Plateforme Collaborative pour le Suivi du Cyclone Belal</title>
 </head>
 
-<body>
+<body class="d-flex flex-column h-100">
 
     <!-- Header -->
     <?php require_once "views/components/header.php"; ?>
 
-    <main class="bg-dark">
+    <main class="bg-dark h-100">
         <?php echo $content; ?>
     </main>
 
