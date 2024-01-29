@@ -63,10 +63,10 @@ function updatePosts(int $id): void
 
             $picture = null;
 
-            if (!empty($_FILES['userPictures']['name'])) {
-                $picture = $_FILES['userPictures']['name'];
+            if (!empty($_FILES['userPicture']['name'])) {
+                $picture = $_FILES['userPicture']['name'];
 
-                $temp_folder = $_FILES['userPictures']['tmp_name'];
+                $temp_folder = $_FILES['userPicture']['tmp_name'];
                 $upload_folder = ROOT_PATH . "/uploads/" . $picture;
 
                 $result = move_uploaded_file($temp_folder, $upload_folder);

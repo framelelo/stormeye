@@ -120,7 +120,7 @@ function showHomePage($posts)
                                 <label class="image-label bg-dark w-100" for="image-upload" id="image-label">
                                     <i class="bi bi-image-fill"></i>
                                 </label>
-                                <input type="file" name="userPictures" id="image-upload" accept=".jpeg,.png,.jpg" onchange="previewFile()" require>
+                                <input type="file" name="userPicture" id="image-upload" accept=".jpeg,.png,.jpg" onchange="previewFile()" require>
                             </div>
 
                             <!-- Content input -->
