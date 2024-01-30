@@ -10,8 +10,8 @@
 
 ## Sommaire
 
-- [A quoi sert l'application ?](#test)
-- [Instructions d'utilisation](#status)
+- [A quoi sert l'application ?](#introduction)
+- [Instructions d'utilisation](#instructions-d'utilisation)
 - [What's included](#whats-included)
 - [Bugs and feature requests](#bugs-and-feature-requests)
 - [Creators](#creators)
@@ -19,7 +19,7 @@
 - [Copyright and license](#copyright-and-license)
 
 
-## test
+## Introduction
 
 <p align="center">
     The Eye of Storm est une plateforme en ligne permettant aux utilisateurs de publier des informations concernant le cyclone Belal...
