@@ -11,7 +11,7 @@
 ## Sommaire
 
 - [A quoi sert l'application ?](#introduction)
-- [Instructions d'utilisation](#instructions-d'utilisation)
+- [Instructions d'utilisation](#instructions-dutilisation)
 - [What's included](#whats-included)
 - [Bugs and feature requests](#bugs-and-feature-requests)
 - [Creators](#creators)
