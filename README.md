@@ -12,7 +12,7 @@
 
 - [A quoi sert l'application ?](#introduction)
 - [Instructions d'utilisation](#instructions-dutilisation-)
-- [What's included](#whats-included)
+- [Comment ça marche ? ](#whats-included)
 - [Bugs and feature requests](#bugs-and-feature-requests)
 - [Creators](#creators)
 - [Thanks](#thanks)
@@ -41,26 +41,21 @@
   -  Email
   -  Mot de passe
  
-- Publier votre première publication dans toujours le respect et la courtoisie ;)
-  Aussi simple que bonjour, il faut entrer : 
-  -  Email
-  -  Mot de passe
-  -  
+- Publier votre première publication dans toujours le respect et la courtoisie :
+  -  Télécharger votre image 
+  -  Un petit commentaire
 
 
-## What's included
+## Comment ça marche ?
 
-Some text
+Pour trouver les liaisons entre l'application et la base de données, il faudra aller depuis la source du projet : 
 
 ```text
-folder1/
-└── folder2/
-    ├── folder3/
-    │   ├── file1
-    │   └── file2
-    └── folder4/
-        ├── file3
-        └── file4
+models/
+folder3/
+│   ├── file1
+│   └── file2
+    
 ```
 
 ## Bugs and feature requests
