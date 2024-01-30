@@ -57,6 +57,8 @@ models/
  └── postController.php
     
 ```
+
+Exemple pour la connexion d'utilisateur :<br>
 function loginUser():void
 {
     if ($_POST) {
