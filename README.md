@@ -40,6 +40,12 @@
   Aussi simple que bonjour, il faut entrer : 
   -  Email
   -  Mot de passe
+ 
+- Publier votre première publication dans toujours le respect et la courtoisie ;)
+  Aussi simple que bonjour, il faut entrer : 
+  -  Email
+  -  Mot de passe
+  -  
 
 
 ## What's included
