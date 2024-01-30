@@ -93,6 +93,27 @@ controllers/
     
 ```
 
+Un exemple de la fonction depuis le dossier Controllers, pour la création de post : 
+
+
+function createPost( $id_user, $image, $content) {
+    try {
+        global $pdo;
+        $query = "INSERT INTO posts (id_user, image, content, date) VALUES (:u, :i, :c, :d)";
+        $statement = $pdo->prepare($query);
+        $statement->execute([
+            'u' => $id_user,
+            'i' => $image,
+            'c' => $content,
+            'd' => date('Y-m-d H:i:s'),
+        ]);
+        return true;
+    } catch (PDOException $e) {
+        echo 'Erreur : '. $e->getMessage();
+        return false;
+    }
+}
+
 ## Bugs and feature requests
 
 Have a bug or a feature request? Please first read the [issue guidelines](https://reponame/blob/master/CONTRIBUTING.md) and search for existing and closed issues. If your problem or idea is not addressed yet, [please open a new issue](https://reponame/issues/new).
