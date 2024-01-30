@@ -11,7 +11,7 @@
 ## Sommaire
 
 - [A quoi sert l'application ?](#quick-start)
-- [Status](#status)
+- [Instructions d'utilisation](#status)
 - [What's included](#whats-included)
 - [Bugs and feature requests](#bugs-and-feature-requests)
 - [Creators](#creators)
@@ -28,9 +28,19 @@
     Le partage d'information et d'image pour que tous les usagers de l'application soit au courant des dégâts ou avancés du cyclone...
   </p>
 
-## Status
+## Instructions d'utilisation : 
 
-Here goes all the budgets
+- Enregistrement d'un compte en un clic et moins d'une minute :
+  -  Une photo de votre plus beau :)
+  -  Nom d'utilisateur
+  -  Email
+  -  Mot de passe
+
+- Connexion
+  Aussi simple que bonjour, il faut entrer : 
+  -  Email
+  -  Mot de passe
+
 
 ## What's included
 
