@@ -13,7 +13,7 @@
 
 ## Table of contents
 
-- [](#quick-start)
+- [What the application does ?](#quick-start)
 - [Status](#status)
 - [What's included](#whats-included)
 - [Bugs and feature requests](#bugs-and-feature-requests)
