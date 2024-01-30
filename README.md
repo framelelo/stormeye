@@ -12,11 +12,11 @@
 
 - [A quoi sert l'application ?](#introduction)
 - [Instructions d'utilisation](#instructions-dutilisation-)
-- [Comment ça marche ? ](#comment-ca-marche-)
-- [Bugs and feature requests](#bugs-and-feature-requests)
-- [Creators](#creators)
+- [Comment ça marche ? ](#comment-ça-marche-)
+- [Bugs et demandes](#bugs-et-demandes)
+- [Créatrice](#creatrice)
 - [Thanks](#thanks)
-- [Copyright and license](#copyright-and-license)
+- [Copyright & license](#copyright-&-license)
 
 
 ## Introduction
@@ -141,18 +141,16 @@ Have a bug or a feature request? Please first read the [issue guidelines](https:
 
 
 
-## Creators
+## Créatrice & copyright
 
 **Creator 1**
 
 - <https://github.com/framelelo>
 
-## Thanks
+## Remerciement
 
 Some Text
 
-## Copyright and license
 
-Code and documentation copyright 2023-2024 the authors. Code released under the [MIT License](https://reponame/blob/master/LICENSE).
 
 Enjoy :metal:
