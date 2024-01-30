@@ -14,7 +14,7 @@
 - [Instructions d'utilisation](#instructions-dutilisation-)
 - [Comment ça marche ? ](#comment-ça-marche-)
 - [Bugs et demandes](#bugs-et-demandes)
-- [Créatrice](#creatrice--copyright)
+- [Créatrice](#créatrice--copyright)
 - [Remerciements](#remerciements)
 
 
