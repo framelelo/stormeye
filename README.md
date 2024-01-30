@@ -140,10 +140,8 @@ Pour tous les bugs ou autres demandes, merci de signaler sur : framelelelo89@gma
 
 
 
-
 ## Créatrice & copyright
 
-**Creator 1**
 
 - <https://github.com/framelelo>
 
