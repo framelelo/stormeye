@@ -14,9 +14,8 @@
 - [Instructions d'utilisation](#instructions-dutilisation-)
 - [Comment ça marche ? ](#comment-ça-marche-)
 - [Bugs et demandes](#bugs-et-demandes)
-- [Créatrice](#creatrice)
-- [Thanks](#thanks)
-- [Copyright & license](#copyright-&-license)
+- [Créatrice](#creatrice--copyright)
+- [Remerciements](#remerciements)
 
 
 ## Introduction
@@ -148,7 +147,7 @@ Pour tous les bugs ou autres demandes, merci de signaler sur : framelelelo89@gma
 
 - <https://github.com/framelelo>
 
-## Remerciement
+## Remerciements
 
 Merci pour votre intérêt à cette application que j'espère pourront servir.
 
