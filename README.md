@@ -48,17 +48,20 @@
 
 ## Comment ça marche ?
 
+Le projet a été conçu sur la bse d'un MVC classique avec donc des dossiers pour séparer les fichiers en fonction de leur utilité. <br>
+
 Pour trouver les liaisons entre l'application et la base de données, il faudra aller depuis la source du projet : <br>
-Les fichiers permettent de gérer les données de la base de données et donc d'interagir avec :
+Les fichiers permettent de gérer les données de la base de données et donc d'interagir avec, les fichiers concernés pour exécuter les requêtes sont :
 
 ```text
 models/
- ├── authController.php
- └── postController.php
+ ├── authModel.php
+ └── postmodel.php
     
 ```
 
-Exemple pour la connexion d'utilisateur :<br>
+Exemple d'une fonction pour la connexion d'utilisateur :<br>
+
 function loginUser():void
 {
     if ($_POST) {
@@ -80,6 +83,15 @@ function loginUser():void
     }
     showLogin();
 }
+
+Pour les controllers qui récupèrent les valeurs des champs depuis les différents formulaires, ils sont accessibles :
+
+```text
+controllers/
+ ├── authController.php
+ └── postController.php
+    
+```
 
 ## Bugs and feature requests
 
