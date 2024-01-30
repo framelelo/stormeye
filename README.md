@@ -25,7 +25,9 @@
 <p align="center">
     The Eye of Storm est une plateforme en ligne permettant aux utilisateurs de publier des informations concernant le cyclone Belal...
   </p>
-
+<p align="center">
+    Le partage d'information et d'image pour que tous les usagers de l'application soit au courant des dégâts ou avancés du cyclone...
+  </p>
 - Instruction 1
 - Instruction 2
 - Instruction 3
