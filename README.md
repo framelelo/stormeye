@@ -12,7 +12,7 @@
 
 - [A quoi sert l'application ?](#introduction)
 - [Instructions d'utilisation](#instructions-dutilisation-)
-- [Comment ça marche ? ](#whats-included)
+- [Comment ça marche ? ](#comment-ca-marche-)
 - [Bugs and feature requests](#bugs-and-feature-requests)
 - [Creators](#creators)
 - [Thanks](#thanks)
