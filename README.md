@@ -93,25 +93,46 @@ controllers/
     
 ```
 
-Un exemple de la fonction depuis le dossier Controllers, pour la création de post : 
+Un exemple de la fonction depuis le dossier Controllers, pour la création de post :
 
+function createPosts(): void
+{
+    if ($_POST) {
+        $id_user = $_SESSION['user']['id'];
+        $content = $_POST['postContent'];
 
-function createPost( $id_user, $image, $content) {
-    try {
-        global $pdo;
-        $query = "INSERT INTO posts (id_user, image, content, date) VALUES (:u, :i, :c, :d)";
-        $statement = $pdo->prepare($query);
-        $statement->execute([
-            'u' => $id_user,
-            'i' => $image,
-            'c' => $content,
-            'd' => date('Y-m-d H:i:s'),
-        ]);
-        return true;
-    } catch (PDOException $e) {
-        echo 'Erreur : '. $e->getMessage();
-        return false;
+        $image =  time() . $_FILES['userPicture']['name'];
+        $temp_folder = $_FILES['userPicture']['tmp_name'];
+        $upload_folder = ROOT_PATH . "/uploads/" . $image;
+
+        $maxFileSize = 2097152;
+        $fileSize = $_FILES['userPicture']['size'];
+
+        // Check if a file was uploaded successfully
+        if ($image) {
+            // Check file size
+            if ($fileSize > $maxFileSize) {
+                echo '<div class="modal-error"><p>La taille de votre image est trop lourde.</p></div>';
+            } else {
+                // Move uploaded file
+                move_uploaded_file($temp_folder, $upload_folder);
+            }
+        } else {
+            // No file uploaded, use default image
+            $image = '';
+        }
+
+        $result = createPost($id_user, $image, $content);
+        if ($result) {
+            echo header('Location: ?p=home');
+        } else {
+            echo '<div class="modal-error"><p>Une erreur s\'est produite.</p></div>';
+        }
     }
+
+    // showHomePage();
+    $posts = getAllPosts();
+    showHomePage($posts);
 }
 
 ## Bugs and feature requests
