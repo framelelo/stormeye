@@ -22,7 +22,7 @@
 ## Introduction
 
 <p align="center">
-    The Eye of Storm est une plateforme en ligne permettant aux utilisateurs de publier des informations concernant le cyclone Belal...
+    The Eye of Storm est une plateforme en ligne permettant aux utilisateurs réunionnais de publier des informations concernant le cyclone Belal...
   </p>
 <p align="center">
     Le partage d'information et d'image pour que tous les usagers de l'application soit au courant des dégâts ou avancés du cyclone...
@@ -135,9 +135,10 @@ function createPosts(): void
     showHomePage($posts);
 }
 
-## Bugs and feature requests
+## Bugs et demandes
 
-Have a bug or a feature request? Please first read the [issue guidelines](https://reponame/blob/master/CONTRIBUTING.md) and search for existing and closed issues. If your problem or idea is not addressed yet, [please open a new issue](https://reponame/issues/new).
+Pour tous les bugs ou autres demandes, merci de signaler sur : framelelelo89@gmail.com
+
 
 
 
@@ -149,7 +150,7 @@ Have a bug or a feature request? Please first read the [issue guidelines](https:
 
 ## Remerciement
 
-Some Text
+Merci pour votre intérêt à cette application que j'espère pourront servir.
 
 
 
