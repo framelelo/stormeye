@@ -48,15 +48,36 @@
 
 ## Comment ça marche ?
 
-Pour trouver les liaisons entre l'application et la base de données, il faudra aller depuis la source du projet : 
+Pour trouver les liaisons entre l'application et la base de données, il faudra aller depuis la source du projet : <br>
+Les fichiers permettent de gérer les données de la base de données et donc d'interagir avec :
 
 ```text
 models/
-folder3/
-│   ├── file1
-│   └── file2
+ ├── authController.php
+ └── postController.php
     
 ```
+function loginUser():void
+{
+    if ($_POST) {
+        
+        $email = $_POST['connectEmail'];
+        $password = $_POST['connectPassword'];
+
+        if ($email && $password) {
+            $loginUser = loginUsers($email, $password);
+            if ($loginUser) {
+              header('Location: ?p=home');
+            }
+            else {
+                echo '<div class="modal-error"><p>Une erreur s\'est produite.</p></div>'; 
+            }
+        } else {
+            echo '<div class="modal-error"><p>Merci de remplir tous les champs.</p></div>';
+        }
+    }
+    showLogin();
+}
 
 ## Bugs and feature requests
 
