@@ -111,9 +111,6 @@ h2.headline {
 }
 
 /** Custom input upload image **/
-input[type="file"] {
-  display: none;
-}
 
 .image-label {
   padding: 20px;
@@ -285,6 +282,16 @@ header {
   }
 }
 
+.publish-link {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-size: 35px;
+  cursor: pointer;
+  &:hover {
+    background-color: var(--secondary-color);
+    color: var(--light-color);
+  }
+}
 /** NO PAGE **/
 
 .nopage-background {
@@ -314,8 +321,6 @@ header {
     }
   }
 }
-
-
 
 /******************************
        DISPLAY MODAL 

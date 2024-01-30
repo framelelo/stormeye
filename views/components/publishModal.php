@@ -15,7 +15,7 @@
                         <label class="image-label bg-dark w-100" for="image-upload" id="image-label">
                             <i class="bi bi-image-fill"></i>
                         </label>
-                        <input type="file" name="userPicture" id="image-upload" accept=".jpeg,.png,.jpg" onchange="previewFile()">
+                        <input type="file" name="userPicture" class="my-3"  id="image-upload" accept=".jpeg,.png,.jpg" onchange="previewFile()">
                     </div>
 
                     <!-- Content input -->

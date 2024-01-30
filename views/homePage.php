@@ -13,7 +13,6 @@ function showHomePage($posts)
                     <button type="button" class="btn-publish custom-double-border text-center" data-bs-toggle="modal" data-bs-target="#publishModal">
                         Créer une publication...
                     </button>
-                    <?php require_once 'views/components/publishModal.php'; ?>
                 </div>
             </section>
         <?php }else{
@@ -88,7 +87,7 @@ function showHomePage($posts)
                                     echo '<span> Il y a ' . $formattedTimeAgo . '</span>'; ?></span>
                                 
                             </div>
-                            <p class="card-text mt-3">
+                            <p class="card-text my-3">
                                 <?= $p['content'] ?>
                             </p>
                         </div>
@@ -120,7 +119,7 @@ function showHomePage($posts)
                                 <label class="image-label bg-dark w-100" for="image-upload" id="image-label">
                                     <i class="bi bi-image-fill"></i>
                                 </label>
-                                <input type="file" name="userPicture" id="image-upload" accept=".jpeg,.png,.jpg" onchange="previewFile()" require>
+                                <input type="file" name="postPicture" class="my-2" id="image-upload" accept=".jpeg,.png,.jpg" onchange="previewFile()">
                             </div>
 
                             <!-- Content input -->

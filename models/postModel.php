@@ -63,11 +63,12 @@ function deletePost($id) {
 function updatePost($id, $picture, $content) {
     try {
         global $pdo;
-        $query = "UPDATE posts SET image = :i, content = :c WHERE id = :id";
+        $query = "UPDATE posts SET image = :i, content = :c, date = :d WHERE id = :id";
         $statement = $pdo->prepare($query);
         $statement->execute([
             'i' => $picture,
             'c' => $content,
+            'd' => date('Y-m-d H:i:s'),
             'id' => $id
         ]);
         return true;

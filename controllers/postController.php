@@ -10,7 +10,7 @@ function createPosts(): void
         $id_user = $_SESSION['user']['id'];
         $content = $_POST['postContent'];
 
-        $image =  $_FILES['userPicture']['name'];
+        $image =  time() . $_FILES['userPicture']['name'];
         $temp_folder = $_FILES['userPicture']['tmp_name'];
         $upload_folder = ROOT_PATH . "/uploads/" . $image;
 
@@ -60,13 +60,11 @@ function updatePosts(int $id): void
             $id = $_GET['id'];
 
             $content = $_POST['postContent'];
+            $picture = $_FILES['postPicture']['name'];
 
-            $picture = null;
+            if (!empty($_FILES['postPicture']['name'])) {
 
-            if (!empty($_FILES['userPicture']['name'])) {
-                $picture = $_FILES['userPicture']['name'];
-
-                $temp_folder = $_FILES['userPicture']['tmp_name'];
+                $temp_folder = time() . $_FILES['postPicture']['tmp_name'];
                 $upload_folder = ROOT_PATH . "/uploads/" . $picture;
 
                 $result = move_uploaded_file($temp_folder, $upload_folder);
@@ -74,13 +72,14 @@ function updatePosts(int $id): void
                     echo '<div class="modal-error"><p>Merci de vérifier.</p></div>';
                 }
             }
+
+
             $update = updatePost($id, $picture, $content);
 
             if ($update) header("location:$base_url?p=home");
             else echo '<div class="modal-error"><p>Merci de vérifier !</p></div>';
         }
     }
-
 
     $posts = getAllPosts();
     showHomePage($posts);

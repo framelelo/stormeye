@@ -24,3 +24,5 @@ foreach (glob("views/*.php") as $filename) {
 foreach (glob("controllers/*.php") as $filename) {
     require_once $filename;
 }
+
+require_once 'views/components/publishModal.php'; 
