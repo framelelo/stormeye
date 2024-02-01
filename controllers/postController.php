@@ -58,12 +58,13 @@ function updatePosts(int $id): void
     if ($_POST) {
         if (isset($_GET['id'])) {
             $id = $_GET['id'];
-
             $content = $_POST['postContent'];
-            $picture = $_FILES['postPicture']['name'];
+            
+            $picture = null;
 
             if (!empty($_FILES['postPicture']['name'])) {
 
+                $picture = $_FILES['postPicture']['name'];
                 $temp_folder = time() . $_FILES['postPicture']['tmp_name'];
                 $upload_folder = ROOT_PATH . "/uploads/" . $picture;
 

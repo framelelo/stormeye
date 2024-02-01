@@ -124,7 +124,8 @@ h2.headline {
   &:hover {
     background-color: var(--primary_color);
   }
-  i {
+  i::before {
+    display: block;
     font-size: 50px;
     line-height: 80px;
   }

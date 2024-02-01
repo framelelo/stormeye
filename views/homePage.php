@@ -116,15 +116,15 @@ function showHomePage($posts)
                                 <div class="img-container mb-3" id="previewContainer">
                                     <img alt="The Eye of Storm" id="previewImage">
                                 </div>
-                                <label class="image-label bg-dark w-100" for="image-upload" id="image-label">
+                                <label class="image-label bg-dark w-100" for="postPicture" id="image-label">
                                     <i class="bi bi-image-fill"></i>
                                 </label>
-                                <input type="file" name="postPicture" class="my-2" id="image-upload" accept=".jpeg,.png,.jpg" onchange="previewFile()">
+                                <input type="file" name="postPicture" class="my-2" id="postPicture" value="<?= $p['image'] ?>" accept=".jpeg,.png,.jpg" onchange="previewFileUpdate()">
                             </div>
 
                             <!-- Content input -->
                             <div class="form-outline mb-3">
-                                <textarea name="postContent" class="form-control-plaintext border-secondary border p-2" id="" cols="30" rows="4" placeholder="<?= $p['content'] ?>" require></textarea>
+                                <textarea name="postContent" value="<?= $p['content'] ?>" class="form-control-plaintext border-secondary border p-2" id="" cols="30" rows="4" placeholder="<?= $p['content'] ?>" require></textarea>
                             </div>
                             <!-- Submit button -->
                             <button type="submit" class="btn btn-primary btn-block customise-btn mb-4 w-100">

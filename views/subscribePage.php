@@ -19,7 +19,7 @@ function showSubscription()
                   <label class="image-label rounded-circle bg-dark" for="image-upload">
                     <i class="bi bi-person-bounding-box"></i>
                   </label>
-                  <input type="file" name="userPicture" id="image-upload" accept=".jpeg,.png,.jpg" onchange="previewFile()">
+                  <input type="file" name="userPicture" id="image-upload" accept=".jpeg,.png,.jpg" onchange="previewFile()" hidden>
                 </div>
 
                 <!-- Username input -->
