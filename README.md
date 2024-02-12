@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://zupimages.net/up/24/05/83cy.png">
-    <img src="https://zupimages.net/up/24/05/83cy.png" alt="Logo" width=250 height=auto>
+    <img src="[https://zupimages.net/up/24/05/83cy.png](https://zupimages.net/up/24/07/crpo.png)" alt="Logo" width=250 height=auto>
   </a>
 
   <h3 align="center">The Eye of Storm</h3>
@@ -21,10 +21,10 @@
 ## Introduction
 
 <p align="center">
-    The Eye of Storm est une plateforme en ligne permettant aux utilisateurs réunionnais de publier des informations concernant le cyclone Belal...
-  </p>
-<p align="center">
-    Le partage d'information et d'image pour que tous les usagers de l'application soit au courant des dégâts ou avancés du cyclone...
+ Le projet de conception du site vitrine pour l'association Well-Being of Strays avait pour objectif principal d'accroître la visibilité en ligne au-delà des réseaux sociaux. Les besoins comprenaient la présentation des animaux disponibles pour l'adoption, la facilitation de la collecte de dons via un lien PayPal, et l'information du public sur les événements à venir.</p>
+
+  
+<p align="center">  Les maquettes ont intégré des boutons 'Call-To-Action' pour encourager les dons, et la page d'accueil a été optimisée pour mettre en avant la section adoption. Sur le plan du développement, une interface utilisateur a été créée pour la gestion facile des fiches d'adoption et d'événements, avec des fonctionnalités CRUD. Un formulaire d'inscription a été ajouté pour permettre aux membres de gérer la partie dynamique du contenu, et les visiteurs peuvent consulter les fiches et utiliser un formulaire de contact. La méthodologie Agile a été suivie pour garantir la validation de chaque étape et répondre aux besoins visuels et fonctionnels de l'association.
   </p>
 
 ## Instructions d'utilisation : 
