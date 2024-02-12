@@ -9,8 +9,8 @@ Well-Being of Strays</h3>
 
 ## Sommaire
 
-- [A quoi sert l'application ?](#introduction)
-- [Instructions d'utilisation](#instructions-dutilisation-)
+- [Le site](#introduction)
+- [Spécifications](#instructions-dutilisation-)
 - [Comment ça marche ? ](#comment-ça-marche-)
 - [Bugs et demandes](#bugs-et-demandes)
 - [Créatrice](#créatrice--copyright)
@@ -31,20 +31,100 @@ Well-Being of Strays</h3>
 
 ## Instructions d'utilisation : 
 
-- Enregistrement d'un compte en un clic et moins d'une minute :
-  -  Une photo de votre plus beau :)
-  -  Nom d'utilisateur
-  -  Email
-  -  Mot de passe
+i.	Souscription 
+La page est accessible par un lien directement communiqué à l’administrateur si besoin peut le transmettre aux membres autorisés.
+1.	Le membre peut s’inscrire si nécessaire en tant que simple utilisateur et gérer les fiches adoptions et évènements, uniquement l’utilisateur avec le rôle “Administrateur” peut gérer les données personnelles des comptes.
+Le formulaire lié à la base de données comprend les champs obligatoires : 
+a.	Nom
+b.	Prénom
+c.	Numéro de téléphone 
+d.	Email
+e.	Mot de passe
+f.	Confirmer le mot de passe
+Note : sur la page “Profils” il est possible pour l’administrateur d’ajouter de nouveaux comptes et aussi d’attribuer le rôle d’Administrateur aux membres.
 
-- Connexion
-  Aussi simple que bonjour, il faut entrer : 
-  -  Email
-  -  Mot de passe
- 
-- Publier votre première publication dans toujours le respect et la courtoisie :
-  -  Télécharger votre image 
-  -  Un petit commentaire
+ii.	Connexion - accessible par un lien directement
+1.	L’utilisateur peut se connecter via le formulaire afin de gérer le contenu.
+Le formulaire lié à la base de données comprend les champs obligatoires : 
+a.	Email
+b.	Mot de passe
+Note : sur la page “Profils” il est possible pour l’administrateur de modifier toutes les informations d’un compte membre ou de supprimer également.
+
+
+
+iii.	Accueil
+1.	La première section de la page contient un bouton de redirection vers le lien paypal pour effectuer un don.
+2.	Section Adoption -
+a.	Affichage de tous les animaux disponibles en adoption, chaque fiche est cliquable vers la page de l’animal.
+3.	Un filtre sous forme de menu déroulant pour sélectionner l’espèce de l’animal est disponible afin de rendre l’expérience utilisateur (UX) plus agréable.
+Si connecté - 
+4.	les boutons “Modifier” ou “Supprimer” s’affichent pour la partie Adoptions afin de gérer le contenu.
+5.	Section Mission comprend un lien vers la section concernée sur la page Missions.
+
+iv.	Adoptions
+1.	La page affiche la liste des adoptions, qui sont séparée par l’espèce mais les visiteurs peuvent toujours filtrer.
+Si connecté - 
+a.	Le formulaire permettant d’ajouter une nouvelle fiche Adoption avec les champs obligatoires : 
+i.	Photo de l’animal – taille maximale définie ainsi que le format 
+ii.	Nom
+iii.	Genre
+iv.	Espèce 
+v.	Description 
+v.	Missions
+1.	Sections avec ancrage pour accéder directement à la section souhaitée : 
+a.	Sensibilisation
+b.	Nourrissage
+c.	Sauvetages
+d.	Stérilisation
+
+vi.	Évènements
+1.	La liste des événements s’affiche
+Si connecté - 
+b.	Le formulaire permettant d’ajouter une nouvelle fiche Évènement avec les champs obligatoires : 
+i.	Titre
+ii.	Image de l'évènement  – taille maximale définie ainsi que le format
+iii.	Lien qui redirige vers la publication ou le formulaire Google pour les inscriptions vers un évènements
+
+
+vii.	Fiche – Animal
+1.	Section de l’animal sélectionné où s’affiche les détails suivants : 
+a.	Image
+b.	Nom
+c.	Genre
+d.	Descriptions
+
+Si connecté - 
+c.	Les boutons “Modifier” ou “Supprimer” s’affichent afin de gérer le contenu.
+d.	Le formulaire permettant de modifier une nouvelle fiche animal avec les champs suivants : 
+i.	Photo de l’animal – taille maximale définie ainsi que le format 
+ii.	Nom
+iii.	Genre
+iv.	Espèce 
+v.	Description
+
+2.	Bouton Contacter : redirige vers la page Contact.
+
+viii.	Contact
+1.	Formulaire avec les champs obligatoires sauf pour le champ Téléphone : 
+a.	Nom
+b.	Email
+c.	Téléphone 
+d.	Objet 
+e.	Message
+
+ix.	Mon profil - accessible par l’administrateur uniquement
+1.	Formulaire avec les champs obligatoires sauf pour le champ Téléphone : 
+2.	Liste de tous les comptes des membres.
+3.	Le formulaire permettant de modifier les informations personnelles ou d’ajouter un compte avec les champs suivants : 
+a.	Nom
+b.	Prénom
+c.	Numéro de téléphone 
+d.	Email
+e.	Mot de passe
+f.	Confirmer le mot de passe 
+
+![image](https://github.com/framelelo/stormeye/assets/41586327/f0eaf680-51ee-4081-8630-d009ba3b6d89)
+
 
 
 ## Comment ça marche ?
@@ -57,40 +137,98 @@ Les fichiers permettent de gérer les données de la base de données et donc d'
 ```text
 models/
  ├── authModel.php
- └── postmodel.php
+ └── eventsmodel.php
+ └── adoptionsmodel.php
+ └── profilesmodel.php
+
     
 ```
 
 Exemple d'une fonction pour la connexion d'utilisateur :<br>
 
-function loginUser():void
+function eventPage()
 {
-    if ($_POST) {
-        
-        $email = $_POST['connectEmail'];
-        $password = $_POST['connectPassword'];
+    global $base_url;
 
-        if ($email && $password) {
-            $loginUser = loginUsers($email, $password);
-            if ($loginUser) {
-              header('Location: ?p=home');
+    $selectedEvent = null;
+
+    if (isset($_GET['id'])) {
+        $id = $_GET['id'];
+        $selectedEvent = showEvent($id);
+    }
+
+    $events = showEvents();
+
+    if ($_POST) {
+        $id_user = $_SESSION["user"]["id"];
+        $title = $_POST['title'];
+        $link = $_POST['event-link'];
+        $description = $_POST['description'];
+
+        $picture = time() . '_' . $_FILES['img-event']['name'];
+        $temp_folder = $_FILES['img-event']['tmp_name'];
+        $upload_folder = ROOT_PATH . "/uploads/" . $picture;
+
+        $maxFileSize = 2097152;
+
+        if (!empty($_FILES['img-event']['name'])) {
+
+        $oldPicturePath = ROOT_PATH . "/uploads/" . $selectedEvent['picture'];
+        $picture_upload = move_uploaded_file($temp_folder, $upload_folder);
+            $fileSize = $_FILES['img-event']['size'];
+
+            if ($fileSize > $maxFileSize) {
+                echo '<div class="modal"><p>La taille de votre image est trop lourde.</p></div>';
+                return
+                    showEventsPage($events, $selectedEvent);
+            } else {
+                
+                if (file_exists($oldPicturePath)) {
+                    unlink($oldPicturePath);
+                }
             }
-            else {
-                echo '<div class="modal-error"><p>Une erreur s\'est produite.</p></div>'; 
+            
+            if (!$picture_upload) {
+                echo '<div class="modal"><p>Merci d\'ajouter une image</p></div>';
+                return
+                    showEventsPage($events, $selectedEvent);
             }
+        }
+        elseif (empty($_FILES['img-event']['name']) && isset($_GET['id'])) {
+            $picture = $selectedEvent['picture'];
+        }
+        else {
+            echo '<div class="modal"><p>Merci d\'ajouter une image</p></div>';
+            return
+                showEventsPage($events, $selectedEvent);
+        }
+
+        if (isset($_GET['id'])) {
+            $id = $_GET['id'];
+            $update = updateEvents($id, $id_user, $title, $picture, $link, $description);
         } else {
-            echo '<div class="modal-error"><p>Merci de remplir tous les champs.</p></div>';
+            $update = newEvents($id_user, $title, $picture, $link, $description);
+        }
+
+        if ($update) {
+            header("Location: $base_url/?page=evenements");
+        } else {
+            echo '<div class="modal"><p>Merci de vérifier les champs obligatoires.</p></div>';
         }
     }
-    showLogin();
+    showEventsPage($events, $selectedEvent);
 }
-
 Pour les controllers qui récupèrent les valeurs des champs depuis les différents formulaires, ils sont accessibles :
 
 ```text
 controllers/
  ├── authController.php
- └── postController.php
+ └── adoptionsController.php
+ └── eventsController.php
+ └── homeController.php
+ └── profilesController.php
+ └── contactController.php
+ └── captchaControllers
     
 ```
 
