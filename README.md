@@ -29,7 +29,7 @@ Well-Being of Strays</h3>
   <p>La méthodologie Agile a été suivie pour garantir la validation de chaque étape et répondre aux besoins visuels et fonctionnels de l'association.
   </p>
 
-## Instructions d'utilisation : 
+## Spécifications: 
 
 i.	Souscription 
 La page est accessible par un lien directement communiqué à l’administrateur si besoin peut le transmettre aux membres autorisés.
