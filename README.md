@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://zupimages.net/up/24/05/83cy.png">
-    <img src="[https://zupimages.net/up/24/05/83cy.png](https://zupimages.net/up/24/07/crpo.png)" alt="Logo" width=250 height=auto>
+    <img src="https://zupimages.net/up/24/07/crpo.png" alt="Logo" width=250 height=auto>
   </a>
 Well-Being of Strays</h3>
 
@@ -122,9 +122,6 @@ c.	Numéro de téléphone
 d.	Email
 e.	Mot de passe
 f.	Confirmer le mot de passe 
-
-![image](https://github.com/framelelo/stormeye/assets/41586327/f0eaf680-51ee-4081-8630-d009ba3b6d89)
-
 
 
 ## Comment ça marche ?
