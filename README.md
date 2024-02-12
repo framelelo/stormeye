@@ -10,7 +10,7 @@ Well-Being of Strays</h3>
 ## Sommaire
 
 - [Le site](#introduction)
-- [Spécifications](#instructions-dutilisation-)
+- [Spécifications](#spécifications)
 - [Comment ça marche ? ](#comment-ça-marche-)
 - [Bugs et demandes](#bugs-et-demandes)
 - [Créatrice](#créatrice--copyright)
