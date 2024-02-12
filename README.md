@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="https://zupimages.net/up/24/05/83cy.png">
+  <a href="https://zupimages.net/up/24/07/crpo.png">
     <img src="https://zupimages.net/up/24/07/crpo.png" alt="Logo" width=250 height=auto>
   </a>
 Well-Being of Strays</h3>
